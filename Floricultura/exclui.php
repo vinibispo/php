@@ -7,7 +7,7 @@
   echo "<form name=form1 method=post action=fazer.php>";
   echo "<input type=hidden name=codigo value=".$codigo.">";
   echo "Nome: <input type=text name=nome value=".$nome."><br>";
-  echo "Fone: <input type=text name=local value=".$local."><br>";
+  echo "Local: <input type=text name=local value=".$local."><br>";
   echo "Vaso: <input type=text name=vasojardim value=".$vasooujardim."><br>";
   ?>
   <input type="radio" name="vasojardim"  value="Vaso" <?php if($vasooujardim == 'Vaso'){ echo "checked";} ?>> Vaso
