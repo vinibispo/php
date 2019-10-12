@@ -3,7 +3,7 @@
         require "../conexao/conexao.php";
         $nome = $_POST['nome'];
         $login = $_POST['login'];
-        $senha = $_POST['senha'];
+        $senha = $_POST['password'];
         $repeat = $_POST['pass'];
         if (empty($nome) || empty($login) || empty($senha) || empty($repeat)) {
             header("Location: ../signup.php?error=emptyfields&nome=".$nome."&login=".$login);
@@ -36,7 +36,7 @@
                         exit();
                     }
                     else{
-                        $hashedPwd = password_hash($senha, PASSWORD_DEFAULT);
+                        $hashedPwd = md5($senha, PASSWORD_DEFAULT);
                         mysqli_stmt_bind_param($stmt, "sss", $nome, $login, $hashedPwd);
                         mysqli_stmt_execute($stmt);
                         header("Location: ../signup.php?success=true");

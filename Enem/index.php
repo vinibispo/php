@@ -4,8 +4,14 @@
 <main>
     <div>
         <section>
-            <p>Você logou!</p>
-            <p>Você deslogou</p>
+        <?php
+            if (isset($_SESSION['login'])) {
+                echo '<p>Você logou!</p>';
+            }
+            else {
+                echo '<p>Você deslogou</p>';
+            }
+        ?>
         </section>
     </div>
 </main>
