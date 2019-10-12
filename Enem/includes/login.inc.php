@@ -23,9 +23,7 @@
                     foreach ($row as $key => $value) {
                         echo $key . "=>" . $value . "<br>";
                     }
-                    $hash = password_hash($senha, PASSWORD_DEFAULT);
-                    echo $hash;
-                    if(hash_equals($row['senha'],$hash)){
+                    if($row['senha'] == md5($senha)){
                         session_start();
                         $_SESSION['login'] = $row['login'];
                         header("Location: ../index.php?success=true");
@@ -37,8 +35,8 @@
                     }
                 }
                 else {
-                    // header("Location: ../index.php?error=nouser");
-                    // exit();
+                    header("Location: ../index.php?error=nouser");
+                    exit();
                 }
             }
         }
