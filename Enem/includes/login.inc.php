@@ -20,18 +20,16 @@
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 if($row = mysqli_fetch_assoc($result)){
-                    foreach ($row as $key => $value) {
-                        echo $key . "=>" . $value . "<br>";
-                    }
                     if($row['senha'] == md5($senha)){
                         session_start();
                         $_SESSION['login'] = $row['login'];
-                        header("Location: ../index.php?success=true");
+                        $_SESSION['senha'] = $row['senha'];
+                        header("Location: ../index.php?login=sucess");
                         exit();
                     }
                     else {
-                        // header("Location: ../index.php?error=wrongpass");
-                        // exit();
+                        header("Location: ../index.php?error=wrongpass");
+                        exit();
                     }
                 }
                 else {

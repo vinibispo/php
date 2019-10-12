@@ -22,15 +22,21 @@
                <li><a href="usuarios.php" >Usuários</a></li>
            </ul>
            <div class="form">
-               <form action="includes/login.inc.php" method="post">
-                    <input type="text" name="login" placeholder="Login">
-                    <input type="password" name="senha" placeholder="Senha">
-                    <button type="submit" name="login-button">Login</button>
-                </form>
-                <a href="signup.php">Cadastrar</a>
-                <form action="includes/logout.inc.php" method="post">
-                    <button type="submit" name="logout">Logout</button>
-                </form>
+               <?php
+                    if (isset($_SESSION['login'])) {
+                        echo '<form action="includes/logout.inc.php" method="post">
+                        <button type="submit" name="logout">Logout</button>
+                        </form>';
+                    }
+                    else {
+                        echo '<form action="includes/login.inc.php" method="post">
+                        <input type="text" name="login" placeholder="Login">
+                        <input type="password" name="senha" placeholder="Senha">
+                        <button type="submit" name="login-button">Login</button>
+                    </form>
+                    <a href="signup.php">Cadastrar</a>';
+                    }
+                ?>
            </div> 
         </nav>
     </header>

@@ -36,7 +36,7 @@
                         exit();
                     }
                     else{
-                        $hashedPwd = md5($senha, PASSWORD_DEFAULT);
+                        $hashedPwd = md5($senha);
                         mysqli_stmt_bind_param($stmt, "sss", $nome, $login, $hashedPwd);
                         mysqli_stmt_execute($stmt);
                         header("Location: ../signup.php?success=true");
