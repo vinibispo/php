@@ -9,7 +9,7 @@
                 echo '<p>Você logou!</p>';
             }
             else {
-                echo '<p>Você deslogou</p>';
+                echo '<p>Você não está logado</p>';
             }
         ?>
         </section>

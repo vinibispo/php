@@ -10,7 +10,7 @@
             exit();
         }
         elseif($senha !== $repeat){
-            header("Location: ../signup.php?eror=passwordCheck");
+            header("Location: ../signup.php?error=passwordCheck");
         }
         else{
             $sql = "SELECT nome FROM usuarios WHERE nome='?'";

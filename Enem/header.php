@@ -17,9 +17,20 @@
                <img src="img/enem.jpg" alt="enem" width="100px" height="100px">
            </a>
            <ul>
-               <li><a href="index.php">Início</a></li>
-               <li><a href="questoes.php">Questões</a></li>
-               <li><a href="usuarios.php" >Usuários</a></li>
+               <?php
+                    if(isset($_GET['login'])){
+                       $login = $_GET['login'];
+                       if($login == "admin"){
+                           echo '<li><a href="questoes.php?login=admin">Questões</a></li>
+                           <li><a href="usuarios.php?login=admin" >Usuários</a></li>
+                           <li><a href="administrativo.php?login=admin">Administrativo</a></li>';
+                       } 
+                       elseif($login="success"){
+                           echo '<li><a href="index.php">Início</a></li>
+                           <li><a href="questoes.php?login=success">Questões</a></li>';
+                       }
+                    }
+               ?>
            </ul>
            <div class="form">
                <?php

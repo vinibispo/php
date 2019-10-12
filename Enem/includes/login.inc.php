@@ -3,7 +3,6 @@
         require "../conexao/conexao.php";
         $login = $_POST['login'];
         $senha = $_POST['senha'];
-        echo "$login, $senha";
         if(empty($login) || empty($senha)){
             header("Location: ../index.php?error=emptyfields");
             exit();
@@ -24,6 +23,10 @@
                         session_start();
                         $_SESSION['login'] = $row['login'];
                         $_SESSION['senha'] = $row['senha'];
+                        if($row['login'] == "admin"){
+                            header("Location: ../administrativo.php?login=admin");
+                            exit();
+                        }
                         header("Location: ../index.php?login=sucess");
                         exit();
                     }
