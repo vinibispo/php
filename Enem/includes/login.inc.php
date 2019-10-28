@@ -23,8 +23,8 @@
                         session_start();
                         $_SESSION['login'] = $row['login'];
                         $_SESSION['senha'] = $row['senha'];
-                        if($row['login'] == "admin"){
-                            header("Location: ../administrativo.php?login=admin");
+                        if($_SESSION['login'] == "admin"){
+                            header("Location: ../index.php?login=admin");
                             exit();
                         }
                         header("Location: ../index.php?login=sucess");

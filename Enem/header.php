@@ -3,35 +3,23 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Enem</title>
 </head>
-<body>
+<body style="background-image:url('img/wallpaper.jpg'); height:1000px; background-attachment: fixed;">
+    
+    
     <header>
-        <nav>
-           <a href="#">
-               <img src="img/enem.jpg" alt="enem" width="100px" height="100px">
+        <nav class="navbar" style="background-color: #FFE606; border-bottom: 2px solid #000;">
+           <a class="navbar-brand" href="#">
+               <img src="img/enem.png" alt="enem" width="200px" height="150px">
            </a>
-           <ul>
-               <?php
-                    if(isset($_GET['login'])){
-                       $login = $_GET['login'];
-                       if($login == "admin"){
-                           echo '<li><a href="questoes.php?login=admin">Questões</a></li>
-                           <li><a href="usuarios.php?login=admin" >Usuários</a></li>
-                           <li><a href="administrativo.php?login=admin">Administrativo</a></li>';
-                       } 
-                       elseif($login="success"){
-                           echo '<li><a href="index.php">Início</a></li>
-                           <li><a href="questoes.php?login=success">Questões</a></li>';
-                       }
-                    }
-               ?>
-           </ul>
+           
            <div class="form">
                <?php
                     if (isset($_SESSION['login'])) {
@@ -45,9 +33,13 @@
                         <input type="password" name="senha" placeholder="Senha">
                         <button type="submit" name="login-button">Login</button>
                     </form>
-                    <a href="signup.php">Cadastrar</a>';
+                    <a href="signup.php" style="color:#000">Cadastrar</a>';
                     }
                 ?>
            </div> 
         </nav>
     </header>
+
+
+
+ 

@@ -1,8 +1,8 @@
 <?php
     require "header.php";
 ?>
-<main>
-    <div>
+
+<div class="container mt-5" style= "background-color: #fff; border-left: 2px solid #000; border-right: 2px solid #000; width: 73%; border: 2px solid #000; padding-top: 30px; height:700px;">
         <section>
             <h1>Cadastrar</h1>
             <?php
@@ -31,7 +31,7 @@
             </form>
         </section>
     </div>
-</main>
+
 <?php
     require "footer.php";
 ?>
