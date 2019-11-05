@@ -47,13 +47,30 @@
 
   mysqli_close($conexao);
 ?>
+<br>
+ <button><a style="color:black" href="index.php?login=admin">Voltar</a></button>
+ </section>
  </div>
 </main>
 
 
 <?php
     require "footer.php";
-} else{
+}elseif ($_SESSION['id']) {
+    echo "<table align=center border=1 width=100%>";
+  echo "<tr><td align=center colspan=2> <b>Usuários</b></td>";
+  echo "</tr>";
+  echo "<td>Login</td>";
+  echo "<td >Pontuação</td>";
+  echo "</tr>";
+    $query = "SELECT p.pontuacao, u.login FROM pontuacao p INNER JOIN usuarios u ON p.id_usu = u.id ORDER BY p.pontuacao ASC";
+    $resultado = mysqli_query($conexao, $query);
+    while($row = mysqli_fetch_assoc($resultado)){
+        echo "<td>".$row['login']."</td>";
+        echo "<td>".$row['pontuacao']."</td";
+    }
+}
+ else{
     echo "401 - não autorizado";
     echo "</section>";
 }

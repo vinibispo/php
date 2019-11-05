@@ -3,7 +3,7 @@ if (isset($_FILES['fileUpload'])) {
     $ext = strtolower(substr($_FILES['fileUpload']['name'], -4));
     if ($ext == '.jpg' or $ext='.jpeg' or $ext='.png')
     $novonome = date("Y.m.d-H.i.s").$ext;
-    $dir = 'uploads/';
+    $dir = '../uploads/';
     move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dir.$novonome);
 }
 ?>

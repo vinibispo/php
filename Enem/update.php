@@ -1,4 +1,7 @@
 <?php
+require "header.php";
+?>
+<?php
     require "conexao/conexao.php";
     $id = $_GET['id'];
     if(isset($_POST['update'])){
@@ -9,26 +12,21 @@
         header("Location: usuarios.php");
     }
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Operação Atualizar</title>
-</head>
-<body>
+<main>
+    <div class="container mt-5" style= "background-color: #fff; border-left: 2px solid #000; border-right: 2px solid #000; width: 73%; border: 2px solid #000; padding-top: 30px; height:700px;">
+        <section>
+
     <form method="post">
         <input type="text" name="nome" placeholder="Nome">
         <input type="text" name="login" placeholder="Login">
         <button type="submit" name="update">Atualizar</button>
-    </form>
+    </form><br>
     <button><a href="usuarios.php">Voltar</a></button>
-    <script src="js/jquery-3.3.1.slim.min.js"> </script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+   </section>
+   </div>
+   </main>
 
-
+<?php
+    require "footer.php";
+    
+?>

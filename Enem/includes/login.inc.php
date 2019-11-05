@@ -21,6 +21,7 @@
                 if($row = mysqli_fetch_assoc($result)){
                     if($row['senha'] == md5($senha)){
                         session_start();
+                        $_SESSION['id'] = $row['id'];
                         $_SESSION['login'] = $row['login'];
                         $_SESSION['senha'] = $row['senha'];
                         if($_SESSION['login'] == "admin"){

@@ -1,4 +1,8 @@
 <?php
+    require "header.php";
+    
+?>
+<?php
     require "conexao/conexao.php";
     if(isset($_POST['insert'])){
         $nome = $_POST['nome'];
@@ -9,22 +13,22 @@
         $resultado = mysqli_query($conexao, $sql);
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Operação Inserir</title>
-</head>
-<body>
+<main>
+    <div class="container mt-5" style= "background-color: #fff; border-left: 2px solid #000; border-right: 2px solid #000; width: 73%; border: 2px solid #000; padding-top: 30px; height:700px;">
+        <section>
     <form action="insert.php" method="post">
         <input type="text" name="nome" placeholder="Nome">
         <input type="text" name="login" placeholder="Login">
         <input type="password" name="password" placeholder="Senha">
         <button type="submit" name="insert">Cadastrar</button>
     </form>
+    <br>
     <button><a href="usuarios.php">Voltar</a></button>
-</body>
-</html>
+</section>
+</div>
+</main>
+<?php
+    require "footer.php";
+    
+?>
             
