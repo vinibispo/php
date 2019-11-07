@@ -3,7 +3,7 @@ require "conexao/conexao.php";
 require "header.php";
 ?>
 
-    <div class="container mt-5" style= "background-color: #fff; border-left: 2px solid #000; border-right: 2px solid #000; width: 73%; border: 2px solid #000; padding-top: 30px; height:700px;">
+    <div class="container mt-5" style= "background-color: #fff; border-left: 2px solid #000; border-right: 2px solid #000; width: 73%; border: 2px solid #000; padding-top: 30px; padding-bottom: 30px; ">
     <main>
     <section>   
 <?php
@@ -75,16 +75,14 @@ require "header.php";
                     <fieldset>
                     <img src="uploads/<?php echo $row['imagem'] ?>" width="200px" height="200px">
                     <p><?php echo $row['enunciado'] ?></p>
-                    <style>
-                        input[type=radio]{
-                            display: block;
-                        }
-                    </style>
-                    <input type="radio" name="<?php echo $row['id']?>" value="A"><?php echo $row['alternativaA']?>
-                    <input type="radio" name="<?php echo $row['id']?>" value="B"><?php echo $row['alternativaB']?>
-                    <input type="radio" name="<?php echo $row['id']?>" value="C"><?php echo $row['alternativaC']?>
-                    <input type="radio" name="<?php echo $row['id']?>" value="D"><?php echo $row['alternativaD']?>
-                    <input type="radio" name="<?php echo $row['id']?>" value="E"><?php echo $row['alternativaE']?>
+                    
+                    
+                    <input type="radio" name="<?php echo $row['id']?>" value="A"><?php echo $row['alternativaA']?><br>
+                    <input type="radio" name="<?php echo $row['id']?>" value="B"><?php echo $row['alternativaB']?><br>
+                    <input type="radio" name="<?php echo $row['id']?>" value="C"><?php echo $row['alternativaC']?><br>
+                    <input type="radio" name="<?php echo $row['id']?>" value="D"><?php echo $row['alternativaD']?><br>
+                    <input type="radio" name="<?php echo $row['id']?>" value="E"><?php echo $row['alternativaE']?><br><br>
+                    <hr size="2px" color="000">
                     </fieldset>
                 <?php
             }

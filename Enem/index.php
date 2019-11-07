@@ -14,18 +14,16 @@
         ?>
         <ul style="font-size:18px;">
                <?php
-                    if(isset($_GET['login'])){
-                       $login = $_GET['login'];
                        if($_SESSION['login'] == "admin"){
-                           echo '<li><a style="color:#000"href="questoes.php?login=admin">Questões</a></li>
-                           <li><a style="color:#000" href="usuarios.php?login=admin" >Usuários</a></li>
-                           <li><a style="color:#000"href="usuarios.php?login=admin">Administrativo</a></li>';
+                           echo '<li><a style="color:#000"href="index.php">Início</a></li>
+                           <li><a style="color:#000"href="questoes.php?login=admin">Questões</a></li>
+                           <li><a style="color:#000" href="usuarios.php" >Usuários</a></li>';
                        } 
                        elseif($login="success"){
                            echo '<li><a style="color:#000"href="index.php">Início</a></li>
+                           <li><a style="color:#000"href="usuarios.php">Usuários</a></li>
                            <li><a style="color:#000"href="questoes.php?login=success">Questões</a></li>';
                        }
-                    }
                ?>
            </ul>
         </section>

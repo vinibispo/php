@@ -63,15 +63,15 @@
   echo "<td>Login</td>";
   echo "<td >Pontuação</td>";
   echo "</tr>";
-    $query = "SELECT p.pontuacao, u.login FROM pontuacao p INNER JOIN usuarios u ON p.id_usu = u.id ORDER BY p.pontuacao ASC";
+  
+  $query = "SELECT p.pontuacao, u.login FROM pontuacao p INNER JOIN usuarios u ON p.id_usu = u.id ORDER BY p.pontuacao ASC";
     $resultado = mysqli_query($conexao, $query);
     while($row = mysqli_fetch_assoc($resultado)){
-        echo "<td>".$row['login']."</td>";
-        echo "<td>".$row['pontuacao']."</td";
+        echo "<tr><td>".$row['login']."</td>";
+        echo "<td>".$row['pontuacao']."</td></tr>";
+    
     }
+        echo "<br> <button><a style=color:black href='index.php'>Voltar</a> </button>";  
 }
- else{
-    echo "401 - não autorizado";
-    echo "</section>";
-}
+
 ?>
