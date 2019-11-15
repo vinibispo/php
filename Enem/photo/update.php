@@ -34,7 +34,7 @@ if (isset($_FILES['fileUpload'])) {
 </head>
 <body>
     <form method="post"  enctype="multipart/form-data">
-        <input type="text" name="nome" placeholder="Nome">
+        <input type="text" name="enunciado" placeholder="Enunciado">
         <input type="text" name="alternativaA" placeholder="A">
         <input type="text" name="alternativaB" placeholder="B">
         <input type="text" name="alternativaC" placeholder="C">
